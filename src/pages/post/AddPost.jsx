@@ -87,7 +87,7 @@ export default function AddPost() {
 
     useEffect(() => {
         const fetchData = async () => {
-            fetch('http://localhost:8000/occupation/list', {
+            fetch('https://jobserver-uudr.onrender.com/occupation/list', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${currentUser.accessToken}`,
@@ -123,7 +123,7 @@ export default function AddPost() {
                 dates = dates[1] + '-' + dates[2] + '-' + dates[0]
                 const res = state
                     ?
-                    await axios.put("http://localhost:8000/job/update", {
+                    await axios.put("https://jobserver-uudr.onrender.com/job/update", {
 
                         "name": name,
                         "description": description,
@@ -138,7 +138,7 @@ export default function AddPost() {
                         "_id": state._id
                     })
                     :
-                    await axios.post("http://localhost:8000/job/create", {
+                    await axios.post("https://jobserver-uudr.onrender.com/job/create", {
 
                         "name": name,
                         "description": description,

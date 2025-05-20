@@ -92,13 +92,13 @@ export default function Register() {
       toast("Đăng ký thành công")
 
 
-      const loginn = await axios.post("http://localhost:8000/auth/login", {
+      const loginn = await axios.post("https://jobserver-uudr.onrender.com/auth/login", {
         "username": values.username,
         "password": values.password
       })
       axios.defaults.headers.common = { 'Authorization': `bearer ${loginn.data.data.accessToken}` }
       console.log("Login thành công")
-      await axios.post("http://localhost:8000/company/create", {
+      await axios.post("https://jobserver-uudr.onrender.com/company/create", {
         "name": values.name,
         "totalEmployee": 0,
         "type": "",

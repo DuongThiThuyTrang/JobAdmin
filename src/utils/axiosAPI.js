@@ -81,11 +81,11 @@ export const patch = async (path, data = {}, config = {}, axiosInstance = instan
 
 export const path = {
   login: "auth/login",
-  logout: "http://localhost:8000/auth/logout",
+  logout: "https://jobserver-uudr.onrender.com/auth/logout",
   changePassword: "auth/change-password",
   editProfile: "auth/edit-profile",
   register: "auth/register",
-  getUser: "http://localhost:8000/auth/info-user",
+  getUser: "https://jobserver-uudr.onrender.com/auth/info-user",
   jobList: "job/list/sort-by-date",
   jobListFilter: "job/list/filter",
   searchJob: "job/list/search",

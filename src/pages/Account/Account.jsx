@@ -68,7 +68,7 @@ export default function Account() {
             axios.defaults.headers.common = { 'Authorization': `bearer ${currentUser.accessTokenn}` }
             try {
                 // chỗ này gọi api, thì để endpoint của be
-                await axios.put("http://localhost:8000/company/update", {
+                await axios.put("https://jobserver-uudr.onrender.com/company/update", {
                     "_id": currentUser.congtyId,
                     "name": name,
                     "totalEmployee": totalEmployee,

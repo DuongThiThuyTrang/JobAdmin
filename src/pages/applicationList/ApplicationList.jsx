@@ -22,7 +22,7 @@ export default function ApplicationList() {
     const fetchData = async () => {
       try {
         axios.defaults.headers.common = { 'Authorization': `bearer ${currentUser.accessTokenn}` }
-        const res = await axios.get(`http://localhost:8000/application/get-by-jobid?jobid=${postId}`)
+        const res = await axios.get(`https://jobserver-uudr.onrender.com/application/get-by-jobid?jobid=${postId}`)
         console.log(res.data.data.data);
         setData(res.data.data.data.map(function (item) {
           return {
@@ -31,7 +31,7 @@ export default function ApplicationList() {
             cv: item.cv
           }
         }))
-        const res2 = await axios.get(`http://localhost:8000/job/detail?id=${postId}`)
+        const res2 = await axios.get(`https://jobserver-uudr.onrender.com/job/detail?id=${postId}`)
         setJob(res2.data.data)
 
 

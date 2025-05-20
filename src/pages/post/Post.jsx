@@ -20,7 +20,7 @@ export default function Post() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`http://localhost:8000/job/detail?id=${postId}`)
+                const res = await axios.get(`https://jobserver-uudr.onrender.com/job/detail?id=${postId}`)
                 setPost(res.data.data)
                 setOcc(res.data.data.idOccupation.name)
                 setPostingDate(res.data.data.postingDate.split("T")[0].split("-").reverse().join("-"))

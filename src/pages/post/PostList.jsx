@@ -42,7 +42,7 @@ export default function PostList() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await fetch("http://localhost:8000/job/delete", {
+          await fetch("https://jobserver-uudr.onrender.com/job/delete", {
             method: "PATCH",
             headers: {
               Accept: "application/json",
@@ -75,7 +75,7 @@ export default function PostList() {
         console.log("currentUser", currentUser)
         axios.defaults.headers.common = { 'Authorization': `bearer ${currentUser.accessTokenn}` }
         const res = await axios.get(
-          `http://localhost:8000/job/list/company/admin/${currentUser.congtyId}/${searchname}`
+          `https://jobserver-uudr.onrender.com/job/list/company/admin/${currentUser.congtyId}/${searchname}`
 
         );
         // console.log("check");
